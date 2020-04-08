@@ -20,7 +20,7 @@ jobs:
           paths:
             - pal-tracker-*.tgz
 
-  deployToReview:
+  deployToReview: 
     docker:
       - image: 'microsoft/dotnet:2.1-sdk'
         environment:
