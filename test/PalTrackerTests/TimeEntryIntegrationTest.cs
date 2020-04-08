@@ -12,12 +12,14 @@ namespace PalTrackerTests
     [Collection("Integration")]
     public class TimeEntryIntegrationTest
     {
-
+        
         private readonly HttpClient _testClient;
 
         public TimeEntryIntegrationTest()
         {
-            _testClient = IntegrationTestServer.Start().CreateClient();
+            Environment.SetEnvironmentVariable("MYSQL__CLIENT__CONNECTIONSTRING", DbTestSupport.TestDbConnectionString);
+            DbTestSupport.ExecuteSql("TRUNCATE TABLE time_entries");
+             _testClient = IntegrationTestServer.Start().CreateClient();
         }
 
         [Fact]
