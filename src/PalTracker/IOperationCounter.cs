@@ -2,6 +2,7 @@ using System.Collections.Generic;
 
 namespace PalTracker
 {
+    //All good!
     public interface IOperationCounter<T>
     {
         void Increment(TrackedOperation operation);
